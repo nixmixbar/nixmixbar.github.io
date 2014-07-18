@@ -102,7 +102,7 @@ gulp.task('pages', function () {
 
 // CSS style sheets
 gulp.task('styles', function () {
-    src.styles = 'styles/**/*.{css,less}';
+    src.styles = ['styles/**/*.{css,less}', 'vendor/**/*.{css,less}'];
     return gulp.src('styles/bootstrap.less')
         .pipe($.less())
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
@@ -115,7 +115,7 @@ gulp.task('styles', function () {
 
 // JavaScript
 gulp.task('scripts', function () {
-    src.scripts = ['scripts/plugins.js', 'scripts/main.js'];
+    src.scripts = ['vendor/jquery.onepage-scroll.js', 'scripts/plugins.js', 'scripts/main.js'];
     return gulp.src(src.scripts)
         .pipe($.if(!RELEASE, $.sourcemaps.init()))
         .pipe($.concat('bundle.js'))
@@ -144,44 +144,13 @@ gulp.task('serve', ['build'], function () {
     watch = true;
 });
 
-// Publish to Amazon S3 / CloudFront
+// Publish to GitHub Pages
 gulp.task('deploy', function () {
-    var awspublish = require('gulp-awspublish');
-    var aws = {
-        "key": process.env.AWS_KEY,
-        "secret": process.env.AWS_SECRET,
-        "bucket": 'XXXXXXXX',
-        "region": 'us-standard',
-        "distributionId": 'XXXXXXXX'
-    };
-    var publisher = awspublish.create(aws);
-    var headers = {
-        'Cache-Control': 'max-age=315360000, no-transform, public'
-    };
-
-    return gulp.src('build/**')
-        // Add a revisioned suffix to the filename for each static asset
-        .pipe($.revAll({
-            ignore: [
-                /^\/apple-touch-icon-precomposed.png$/g,
-                /^\/browserconfig.xml$/g,
-                /^\/crossdomain.xml$/g,
-                /^\/error.html$/g,
-                /^\/humans.txt$/g,
-                /^\/robots.txt$/g
-            ]
-        }))
-        // Gzip, set Content-Encoding headers
-        .pipe(awspublish.gzip())
-        // Publisher will add Content-Length, Content-Type and headers specified above
-        // If not specified it will set x-amz-acl to public-read by default
-        .pipe(publisher.publish(headers))
-        // Create a cache file to speed up consecutive uploads
-        .pipe(publisher.cache())
-        // Print upload updates to console
-        .pipe(awspublish.reporter())
-        // Updates the Default Root Object of a CloudFront distribution
-        .pipe($.cloudfront(aws));
+    return gulp.src(DEST + '/**/*')
+        .pipe($.ghPages({
+            remoteUrl: 'https://github.com/nixmixbar/nixmixbar.github.io.git',
+            branch: 'master'
+        }));
 });
 
 // Run PageSpeed Insights
