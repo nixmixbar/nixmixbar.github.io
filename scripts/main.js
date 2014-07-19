@@ -7,5 +7,7 @@
     'use strict';
 
     // https://github.com/peachananr/onepage-scroll
-    $('.wrapper').onepage_scroll();
+    $('.wrapper').onepage_scroll({
+        loop: false
+    });
 })();
