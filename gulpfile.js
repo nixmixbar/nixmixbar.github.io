@@ -18,6 +18,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 // Settings
 var DEST = './build';
+var TEST = !!argv.test;
 var RELEASE = Boolean(argv.release);
 var GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X';
 var AUTOPREFIXER_BROWSERS = [
@@ -69,6 +70,7 @@ gulp.task('vendor', function () {
 gulp.task('assets', function () {
     src.assets = 'assets/**';
     return gulp.src(src.assets)
+        .pipe($.if('**/robots.txt', TEST ? $.replace('Disallow:', 'Disallow: /') : $.util.noop()))
         .pipe(gulp.dest(DEST))
         .pipe($.if(watch, reload({stream: true})));
 });
