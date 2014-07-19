@@ -22,9 +22,28 @@ html, body {
    ========================================================================== */
 
 .page-home {
+    background: no-repeat #fff;
+    background-image: url(../img/bg-dinner-top.jpg), url(../img/bg-dinner-right.jpg), url(../img/bg-dinner-bottom.jpg), url(../img/bg-dinner-left.jpg);
+    background-position: 50% 0, 100% 50%, 50% 100%, 0 50%;
+    background-size: auto 25%, 17% auto, auto 29%, 18% auto;
+    text-align: center;
+
+    .container {
+        height: 100%;
+
+        &::after {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            width: 0px;
+        }
+    }
+
     .logo {
-        display: block;
-        margin: 26% auto 0;
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 50%;
+        max-height: 30%;
     }
 }
 
