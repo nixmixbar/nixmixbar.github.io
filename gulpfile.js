@@ -163,6 +163,16 @@ gulp.task('serve', ['build'], function () {
 
 // Publish to GitHub Pages
 gulp.task('deploy', function () {
+
+    // Remove temp folder
+    if (argv.clean) {
+        var os = require('os');
+        var path = require('path');
+        var repoPath = path.join(os.tmpdir(), 'tmpRepo');
+        $.util.log('Delete ' + $.util.colors.magenta(repoPath));
+        del.sync(repoPath, {force: true});
+    }
+
     return gulp.src(DEST + '/**/*')
         .pipe($.ghPages({
             remoteUrl: 'https://github.com/nixmixbar/nixmixbar.github.io.git',
