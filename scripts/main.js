@@ -33,8 +33,10 @@
             // Hide menu on the home screen
             if (index = 1 && nextIndex == 2) {
                 navbar.fadeIn('slow');
+                navbar.css({borderBottomColor: '#6d0000'});
             } else if (index = 2 && nextIndex == 1) {
                 navbar.fadeOut('slow');
+                navbar.css({borderBottomColor: '#6d0000'});
             } else {
                 navbar.show();
                 if (nextIndex == 5) {
