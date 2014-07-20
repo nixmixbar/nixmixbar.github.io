@@ -11,9 +11,11 @@
 
     // https://github.com/alvarotrigo/fullPage.js/
     $('#fullpage').fullpage({
-        anchors: ['#home', '#about', '#menu', '#photos', '#contact', '#store'],
+        anchors: ['home', 'about', 'menu', 'photos', 'contact', 'store'],
         css3: true,
         afterLoad: function (anchorLink, index) {
+            console.log('afterLoad(' + anchorLink + ', ' + index + ')');
+
             // Highlight an active menu item
             $('li', menu).map(function (i) {
                 if (i == (index - 2)) {
@@ -24,11 +26,15 @@
             });
         },
         onLeave: function (index, nextIndex, direction) {
+            console.log('onLeave(' + index + ', ' + nextIndex + ', ' + direction + ')');
+
             // Hide menu on the home screen
             if (index = 1 && nextIndex == 2) {
                 navbar.fadeIn('slow');
             } else if (index = 2 && nextIndex == 1) {
                 navbar.fadeOut('slow');
+            } else {
+                navbar.show();
             }
         }
     });
