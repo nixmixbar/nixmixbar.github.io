@@ -8,6 +8,7 @@
 
     var navbar = $('.navbar').hide().removeClass('hide');
     var menu = $('.nav', navbar);
+    var logo = $('svg path', navbar);
     var scrollingSpeed = 700;
 
     // https://github.com/alvarotrigo/fullPage.js/
@@ -34,15 +35,19 @@
             if (index = 1 && nextIndex == 2) {
                 navbar.fadeIn('slow');
                 navbar.css({borderBottomColor: '#6d0000'});
+                logo.css({fill: '#6d0000'});
             } else if (index = 2 && nextIndex == 1) {
                 navbar.fadeOut('slow');
                 navbar.css({borderBottomColor: '#6d0000'});
+                logo.css({fill: '#6d0000'});
             } else {
                 navbar.show();
                 if (nextIndex == 5) {
                     navbar.animate({borderBottomColor: '#fff4e8'}, scrollingSpeed);
+                    logo.css({fill: '#fff4e8'});
                 } else {
                     navbar.animate({borderBottomColor: '#6d0000'}, scrollingSpeed);
+                    logo.css({fill: '#6d0000'});
                 }
             }
         }
