@@ -6,8 +6,6 @@
 (function () {
     'use strict';
 
-    // https://github.com/peachananr/onepage-scroll
-    $('.wrapper').onepage_scroll({
-        loop: false
-    });
+    // https://github.com/alvarotrigo/fullPage.js/
+    $('#fullpage').fullpage();
 })();
