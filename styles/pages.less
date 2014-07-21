@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Pages
+   ========================================================================== */
+
+.page-home {
+    background: url(../img/bg-dinner-top.jpg) 53% 0 no-repeat, url(../img/bg-dinner-right.jpg) 100% 57% no-repeat, url(../img/bg-dinner-bottom.jpg) 46% 100% no-repeat, url(../img/bg-dinner-left.jpg) 0 50% no-repeat #fff;
+    background-size: auto 25%, 17% auto, auto 29%, 18% auto;
+    text-align: center;
+
+    .container {
+        height: 100%;
+
+        &::after {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            width: 0px;
+        }
+    }
+
+    .logo {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 50%;
+        max-height: 30%;
+    }
+}
+
+.page-about,
+.page-menu,
+.page-photos,
+.page-store {
+    color: @dark-bg-color;
+    background-color: @light-bg-color;
+}
+
+.page-contact {
+    color: @light-bg-color;
+    background-color: @dark-bg-color;
+
+    .page-title span {
+        border-bottom-color: @light-bg-color;
+    }
+}
+
+.page-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(-90.0deg);
+    position: absolute;
+    left: -60px;
+    top: 290px;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.page-title span {
+    border-bottom: 6px solid @dark-bg-color;
+}
+
+.section .container {
+    position: relative;
+    height: 100%;
+}
+
+.designer {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    font-size: 11px;
+}
