@@ -70,7 +70,6 @@ gulp.task('vendor', function () {
 gulp.task('assets', function () {
     src.assets = 'assets/**';
     return gulp.src(src.assets)
-        .pipe($.if('**/robots.txt', TEST ? $.replace('Disallow:', 'Disallow: /') : $.util.noop()))
         .pipe(gulp.dest(DEST))
         .pipe($.if(watch, reload({stream: true})));
 });
@@ -180,6 +179,7 @@ gulp.task('deploy', function () {
     }
 
     return gulp.src(DEST + '/**/*')
+        .pipe($.if('**/robots.txt', !argv.production ? $.replace('Disallow:', 'Disallow: /') : $.util.noop()))
         .pipe($.ghPages({
             remoteUrl: 'https://github.com/nixmixbar/nixmixbar.github.io.git',
             branch: 'master'
