@@ -30,31 +30,20 @@
         },
         onLeave: function (index, nextIndex, direction) {
             //console.log('onLeave(' + index + ', ' + nextIndex + ', ' + direction + ')');
+            navbar.removeClass('navbar-light');
 
-            // Hide menu on the home screen
             if (index = 1 && nextIndex == 2) {
+                // Fade in navigation bar on the About screen
                 navbar.fadeIn('slow');
-                navbar.css({borderBottomColor: '#6d0000'});
-                logo.css({fill: '#6d0000'});
             } else if (index = 2 && nextIndex == 1) {
+                // Fade out navigation bar on the home screen
                 navbar.fadeOut('slow');
-                navbar.css({borderBottomColor: '#6d0000'});
-                logo.css({fill: '#6d0000'});
             } else {
                 navbar.show();
+
+                // Invert navigation bar on the Contact screen
                 if (nextIndex == 5) {
-                    if (direction == 'up') {
-                        navbar.animate({borderBottomColor: '#fff4e8'}, scrollingSpeed);
-                        logo.css({fill: '#fff4e8'});
-                    } else {
-                        setTimeout(function () {
-                            navbar.animate({borderBottomColor: '#fff4e8'}, scrollingSpeed);
-                            logo.css({fill: '#fff4e8'});
-                        }, 700);
-                    }
-                } else {
-                    navbar.animate({borderBottomColor: '#6d0000'}, scrollingSpeed);
-                    logo.css({fill: '#6d0000'});
+                    navbar.addClass('navbar-light');
                 }
             }
         }

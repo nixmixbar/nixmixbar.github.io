@@ -7,13 +7,29 @@
     border-right: none;
     border-bottom: 3px solid @dark-bg-color;
     border-left: none;
+
+    -webkit-transition: border-color 1s linear;
+            transition: border-color 1s linear;
+
+    path {
+        fill: @dark-bg-color;
+
+        -webkit-transition: fill 1s linear;
+                transition: fill 1s linear;
+    }
+}
+
+// Added on the Contact page only
+.navbar-light {
+    border-color: @light-bg-color;
+
+    path {
+        fill: @light-bg-color;
+    }
 }
 
 .navbar-brand {
     padding-top: 27px;
     paddint-bottom: 0;
-}
-
-.page-contact .navbar {
-    border-bottom-color: @light-bg-color;
+    cursor: pointer;
 }
