@@ -19,6 +19,78 @@
     }
 }
 
+.navbar-brand {
+    padding-top: 27px;
+    paddint-bottom: 0;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    margin: (@navbar-padding-vertical / 2) + 14px -@navbar-padding-horizontal 0;
+    border: 3px solid @dark-bg-color;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+
+    -webkit-transition: border-color 1s linear;
+            transition: border-color 1s linear;
+
+    > li {
+        border-left: 3px solid @dark-bg-color;
+
+        -webkit-transition: border-color 1s linear;
+                transition: border-color 1s linear;
+    }
+
+    > li:first-child {
+        border-left: none;
+    }
+
+    > li > a {
+        padding: 10px 25px;
+        color: @dark-bg-color;
+    }
+
+    > li > a:hover {
+        background: none;
+    }
+
+    > li.active > a {
+        color: @light-bg-color;
+        background: @dark-bg-color;
+    }
+
+    > li.active a:before,
+    > li.active a:after {
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        background-color: @light-bg-color;
+        content: '';
+    }
+
+    > li.active a:before {
+        left: 10px;
+    }
+
+    > li.active a:after {
+        right: 10px;
+    }
+
+    @media (min-width: @grid-float-breakpoint) {
+
+        > li {
+            > a {
+                padding: 10px 25px;
+            }
+        }
+    }
+}
+
 // Added on the Contact page only
 .navbar-light {
     border-color: @light-bg-color;
@@ -26,10 +98,26 @@
     path {
         fill: @light-bg-color;
     }
-}
 
-.navbar-brand {
-    padding-top: 27px;
-    paddint-bottom: 0;
-    cursor: pointer;
+    .navbar-nav {
+        border-color: @light-bg-color;
+
+        > li {
+            border-color: @light-bg-color;
+        }
+
+        > li > a {
+            color: @light-bg-color;
+        }
+
+        > li.active > a {
+            color: @dark-bg-color;
+            background: @light-bg-color;
+        }
+
+        > li.active a:before,
+        > li.active a:after {
+            background-color: @dark-bg-color;
+        }
+    }
 }

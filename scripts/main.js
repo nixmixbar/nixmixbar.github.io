@@ -16,21 +16,18 @@
         anchors: ['home', 'about', 'menu', 'photos', 'contact', 'store'],
         css3: true,
         scrollingSpeed: scrollingSpeed,
-        afterLoad: function (anchorLink, index) {
-            // console.log('afterLoad(' + anchorLink + ', ' + index + ')');
+        onLeave: function (index, nextIndex, direction) {
+            //console.log('onLeave(' + index + ', ' + nextIndex + ', ' + direction + ')');
+            navbar.removeClass('navbar-light');
 
             // Highlight an active menu item
             $('li', menu).map(function (i) {
-                if (i == (index - 2)) {
+                if (i == (nextIndex - 2)) {
                     $(this).addClass('active');
                 } else {
                     $(this).removeClass('active');
                 }
             });
-        },
-        onLeave: function (index, nextIndex, direction) {
-            //console.log('onLeave(' + index + ', ' + nextIndex + ', ' + direction + ')');
-            navbar.removeClass('navbar-light');
 
             if (index = 1 && nextIndex == 2) {
                 // Fade in navigation bar on the About screen
