@@ -2,3 +2,85 @@
    Navs
    ========================================================================== */
 
+.nav-menu {
+
+    //.make-sm-column(10);
+    //.make-sm-column-offset(2);
+    float: none;
+    text-align: center;
+    margin-left: 80px;
+
+    > li {
+        float: none;
+        display: inline-block;
+
+        // Links rendered as pills
+        > a {
+            border: 3px solid transparent;
+            padding-left: 25px;
+            padding-right: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                background-color: inherit;
+                border-color: @dark-bg-color;
+            }
+
+            &:hover:before,
+            &:hover:after {
+                position: absolute;
+                top: 50%;
+                margin-top: -4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 8px;
+                background-color: @dark-bg-color;
+                content: '';
+            }
+
+            &:hover:before {
+                left: 10px;
+            }
+
+            &:hover:after {
+                right: 10px;
+            }
+        }
+        + li {
+            margin-left: 10px;
+        }
+
+        // Active state
+        &.active > a {
+            &,
+            &:hover,
+            &:focus {
+                border-color: @dark-bg-color;
+            }
+
+            &:before,
+            &:after {
+                position: absolute;
+                top: 50%;
+                margin-top: -4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 8px;
+                background-color: @dark-bg-color;
+                content: '';
+            }
+
+            &:before {
+                left: 10px;
+            }
+
+            &:after {
+                right: 10px;
+            }
+        }
+    }
+}

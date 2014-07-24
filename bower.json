@@ -5,6 +5,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "modernizr": "~2.8.3",
-    "fullpage.js": "~2.0.7"
+    "fullpage.js": "~2.0.7",
+    "perfect-scrollbar": "~0.4.11"
   }
 }

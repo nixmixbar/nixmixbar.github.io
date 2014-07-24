@@ -134,6 +134,7 @@ gulp.task('scripts', function () {
         'bower_components/fullpage.js/vendors/jquery.easings.min.js',
         'bower_components/jquery.slimscroll/jquery.slimscroll.js',
         'bower_components/fullpage.js/jquery.fullPage.js',
+        'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
         'scripts/main.js'
     ];
     return gulp.src(src.scripts)
