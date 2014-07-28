@@ -81,8 +81,8 @@ gulp.task('images', function () {
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest(DEST + '/img'))
-        .pipe($.if(watch, reload({stream: true})));
+        .pipe(gulp.dest(DEST + '/img'));
+        //.pipe($.if(watch, reload({stream: true}))); doesn't work
 });
 
 // Fonts

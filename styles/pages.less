@@ -28,7 +28,6 @@
 
 .page-about,
 .page-menu,
-.page-photos,
 .page-store {
     color: @dark-bg-color;
     background-color: @light-bg-color;
@@ -43,6 +42,7 @@
 
 }
 
+.page-photos,
 .page-contact {
     color: @light-bg-color;
     background-color: @dark-bg-color;
@@ -85,7 +85,7 @@
 
         .row {
 
-            &:nth-of-type(1) {
+            &:first-of-type {
                 margin-top: 200px;
             }
 
@@ -99,12 +99,67 @@
     }
 }
 
-.section.page-home {
+.page-home {
     border-top: none;
 }
 
-.section.page-contact {
+.page-photos,
+.page-contact {
     border-top-color: @light-bg-color;
+}
+
+.page-photos {
+    background-color: @dark-bg-color;
+
+    .slide {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .photo01 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6429.jpg);
+    }
+
+    .photo02 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6325.jpg);
+    }
+
+    .photo03 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6400.jpg);
+    }
+
+    .photo04 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6414.jpg);
+    }
+
+    .photo05 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6509.jpg);
+    }
+
+    .photo06 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6591.jpg);
+    }
+
+    .photo07 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6597.jpg);
+    }
+
+    .photo08 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6600.jpg);
+    }
+
+    .photo09 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6606.jpg);
+    }
+
+    .photo10 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6610.jpg);
+    }
+
+    .photo11 {
+        background-image: url(../img/nix-mix-photo-1920x1080-6614.jpg);
+    }
 }
 
 .designer {
