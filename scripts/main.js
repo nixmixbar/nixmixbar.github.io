@@ -47,8 +47,8 @@
             } else {
                 navbar.show();
 
-                // Invert navigation bar on the Photos and Contact pages
-                if (nextIndex == 4 || nextIndex == 5) {
+                // Invert navigation bar on the Contact pages
+                if (nextIndex == 5) {
                     navbar.addClass('navbar-light');
                 }
             }
