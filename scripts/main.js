@@ -10,6 +10,16 @@
     var menu = $('.nav', navbar);
     var scrollingSpeed = 700;
 
+    $('.page-home').click(function () {
+        window.location = '/#about';
+    });
+
+    var navbarBrand = $('.navbar-brand', navbar);
+    var logoImageUrl = $('img', navbarBrand).attr('src');
+
+    // Replace <img src="img/logo.svg" /> with <svg />
+    navbarBrand.load(logoImageUrl);
+
     // https://github.com/alvarotrigo/fullPage.js/
     $('#fullpage').fullpage({
         anchors: ['home', 'about', 'menu', 'photos', 'contact', 'store'],
