@@ -69,8 +69,8 @@ gulp.task('vendor', function () {
 gulp.task('assets', function () {
     src.assets = 'assets/**';
     return gulp.src(src.assets)
-        .pipe(gulp.dest(DEST))
-        .pipe($.if(watch, reload({stream: true})));
+        .pipe(gulp.dest(DEST));
+        //.pipe($.if(watch, reload({stream: true}))); doesn't work
 });
 
 // Images

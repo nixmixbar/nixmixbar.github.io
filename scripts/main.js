@@ -26,6 +26,7 @@
         css3: true,
         scrollingSpeed: scrollingSpeed,
         normalScrollElements: '.menu',
+        verticalCentered: false,
         onLeave: function (index, nextIndex, direction) {
             //console.log('onLeave(index: ' + index + ', nextIndex: ' + nextIndex + ', direction: ' + direction + ')');
             navbar.removeClass('navbar-light');

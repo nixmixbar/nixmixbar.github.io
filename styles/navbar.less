@@ -2,6 +2,27 @@
    Navbar
    ========================================================================== */
 
+.navbar,
+.navbar-header,
+.navbar-header .container,
+.navbar-brand {
+    height: 100px;
+
+    @media (min-width: @screen-sm-min) {
+        height: 110px;
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+        height: 121px;
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+        height: 130px;
+    }
+}
+
 .navbar {
     border: 3px solid @dark-bg-color;
 
@@ -17,26 +38,73 @@
 }
 
 .navbar-brand {
-    padding-top: 27px;
-    paddint-bottom: 0;
+    padding: 17px 15px 23px;
     cursor: pointer;
 
+    @media (min-width: @screen-sm-min) {
+        padding: 19px 15px 25px;
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+        padding: 20px 15px 28px;
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+        padding: 20px 15px 30px;
+    }
+
     svg {
-        width: 241px;
-        height: 80px;
+        width: 180px;
+        height: 60px;
+
+        /* Small devices (tablets, 768px and up) */
+        @media (min-width: @screen-sm-min) {
+            width: 200px;
+            height: 66px;
+        }
+
+        /* Medium devices (desktops, 992px and up) */
+        @media (min-width: @screen-md-min) {
+            width: 220px;
+            height: 73px;
+        }
+
+        /* Large devices (large desktops, 1200px and up) */
+        @media (min-width: @screen-lg-min) {
+            width: 241px;
+            height: 80px;
+        }
     }
 }
 
 .navbar-nav {
-    margin: (@navbar-padding-vertical / 2) + 14px -@navbar-padding-horizontal 0;
+    margin: (@navbar-padding-vertical / 2) + 11px -@navbar-padding-horizontal 0;
     border: 3px solid @dark-bg-color;
     border-radius: 3px;
     text-transform: uppercase;
-    font-size: 18px;
     font-weight: bold;
+    letter-spacing: 2px;
+    vertical-align: baseline;
 
     -webkit-transition: border-color 1s linear;
             transition: border-color 1s linear;
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) {
+        margin: (@navbar-padding-vertical / 2) + 13px -@navbar-padding-horizontal 0;
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+        margin: (@navbar-padding-vertical / 2) + 17px -@navbar-padding-horizontal 0;
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+        margin: (@navbar-padding-vertical / 2) + 20px -@navbar-padding-horizontal 0;
+    }
 
     > li {
         border-left: 3px solid @dark-bg-color;
@@ -50,8 +118,24 @@
     }
 
     > li > a {
-        padding: 10px 25px;
+        padding: 12px 25px;
         color: @dark-bg-color;
+        font-size: 12px;
+
+        /* Small devices (tablets, 768px and up) */
+        @media (min-width: @screen-sm-min) {
+            font-size: 14px;
+        }
+
+        /* Medium devices (desktops, 992px and up) */
+        @media (min-width: @screen-md-min) {
+            font-size: 16px;
+        }
+
+        /* Large devices (large desktops, 1200px and up) */
+        @media (min-width: @screen-lg-min) {
+            font-size: 18px;
+        }
     }
 
     > li > a:hover {
@@ -87,9 +171,14 @@
 
         > li {
             > a {
-                padding: 10px 25px;
+                padding: 12px 25px;
+                line-height: 1em;
             }
         }
+    }
+
+    &:last-child {
+        margin-right: 0 !important;
     }
 }
 

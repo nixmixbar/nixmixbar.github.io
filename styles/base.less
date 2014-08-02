@@ -6,6 +6,31 @@ html, body {
     background-color: @light-bg-color;
 }
 
+// Import the fonts
+@font-face {
+    font-family: 'CalibreWeb';
+    src: url('@{icon-font-path}CalibreWeb-Regular.eot');
+    src: url('@{icon-font-path}CalibreWeb-Regular.eot?#iefix') format('embedded-opentype'),
+    //url('@{icon-font-path}CalibreWeb-Regular.woff') format('woff'),
+    url('@{icon-font-path}CalibreWeb-Regular.svg#@{icon-font-svg-id}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CalibreWeb';
+    src: url('@{icon-font-path}CalibreWeb-Medium.eot');
+    src: url('@{icon-font-path}CalibreWeb-Medium.eot?#iefix') format('embedded-opentype'),
+    //url('@{icon-font-path}CalibreWeb-Medium.woff') format('woff'),
+    url('@{icon-font-path}CalibreWeb-Medium.svg#@{icon-font-svg-id}') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.container {
+    min-width: @screen-sm-min !important;
+}
+
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
