@@ -24,6 +24,42 @@
     }
 }
 
+@title-size-sm: 60px;
+@title-size-md: 65px;
+@title-size-lg: 70px;
+
+.menu-container {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    width: @screen-sm-min !important;
+    height: auto !important;
+    text-align: center;
+    margin-left: -(@screen-sm-min - @grid-gutter-width)/2;
+    z-index: 9999;
+
+        /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) {
+        top: 137px;
+        width: (@screen-sm-min - @title-size-sm) !important;
+        margin-left: -((@screen-sm-min - @grid-gutter-width)/2 - @title-size-sm);
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+        top: 151px;
+        width: (@screen-md-min - @title-size-md);
+        margin-right: -((@screen-md-min - @grid-gutter-width)/2 - @title-size-md);
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+        top: 165px;
+        width: (@screen-lg-min - @title-size-lg);
+        margin-right: -((@screen-lg-min - @grid-gutter-width)/2 - @title-size-lg);
+    }
+}
+
 .list-menu {
 
     dt {

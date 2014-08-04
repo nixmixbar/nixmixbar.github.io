@@ -8,6 +8,7 @@
 
     var navbar = $('.navbar').hide().removeClass('hide');
     var menu = $('.nav', navbar);
+    var navMenu = $('.nav-menu');
     var scrollingSpeed = 700;
 
     $('.page-home').click(function () {
@@ -53,6 +54,16 @@
                 if (nextIndex == 5) {
                     navbar.addClass('navbar-light');
                 }
+            }
+        },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction) {
+            var nextSlideIndex = direction === 'right' ? slideIndex + 1 : (direction === 'left' ? slideIndex - 1 : slideIndex);
+            //console.log('onLeave(anchorLink: ' + anchorLink + ', index: ' + index + ', slideIndex: ' + slideIndex + ', direction: ' + direction + ')');
+            //console.log('nextSlideIndex: ' + nextSlideIndex);
+
+            if (anchorLink === 'menu') {
+                $('li', navMenu).removeClass('active');
+                $($('li', navMenu)[nextSlideIndex]).addClass('active');
             }
         }
     });
